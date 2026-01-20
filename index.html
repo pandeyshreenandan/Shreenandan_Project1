@@ -8,52 +8,64 @@
 </head>
 <body>
 
-  <header>
-    <h1>Shreenandan Pandey</h1>
-    <p>Web Developer | HTML • CSS • JavaScript</p>
+  <!-- NAVBAR -->
+  <nav class="nav">
+    <div class="nav-left">
+      <div class="logo">SP</div>
+      <div class="name">Shreenandan Pandey</div>
+    </div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn-small">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm <span class="highlight">Shreenandan Pandey</span> 👋</h1>
+      <p class="subtitle">
+        Beginner Web Developer (HTML • CSS • JavaScript) <br />
+        Building projects and learning daily 🚀
+      </p>
+
+      <div class="hero-buttons">
+        <a class="btn" href="#projects">View Projects</a>
+        <a class="btn-outline" href="#contact">Hire / Contact Me</a>
+      </div>
+
+      <div class="social">
+        <a target="_blank" href="https://github.com/pandeyshreenandan">GitHub</a>
+        <a target="_blank" href="https://www.linkedin.com/">LinkedIn</a>
+        <a target="_blank" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <p class="badge">✅ Hosted on GitHub Pages</p>
+      <h3>My Website is Live</h3>
+      <p class="small">
+        Link:
+        <a target="_blank" href="https://pandeyshreenandan.github.io/Shreenandan_Project1/">
+          Open Portfolio
+        </a>
+      </p>
+      <p class="small">Updated: <span id="todayDate"></span></p>
+    </div>
   </header>
 
-  <div class="container">
-
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <h2>About Me</h2>
     <div class="card">
-      <h2>About Me</h2>
       <p>
-        Hi! I am Shreenandan Pandey. I am learning Web Development.
-        This is my first hosted website using GitHub Pages.
+        Hi! My name is <b>Shreenandan Pandey</b>. I am learning Web Development.
+        I created this portfolio website using <b>Git</b>, <b>GitHub</b> and <b>GitHub Pages</b>.
       </p>
-    </div>
+      <p>
+        I want to become a skilled developer and build real-world websites and apps.
+      </p>
 
-    <div class="card">
-      <h2>Skills</h2>
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript (Basic)</li>
-        <li>Git & GitHub</li>
-      </ul>
-    </div>
-
-    <div class="card">
-      <h2>Projects</h2>
-      <p><b>Project 1:</b> My First GitHub Pages Website ✅</p>
-
-      <a class="btn" href="https://github.com/pandeyshreenandan/Shreenandan_Project1" target="_blank">
-        View on GitHub
-      </a>
-    </div>
-
-    <div class="card">
-      <h2>Contact</h2>
-      <p>Email: <b>pandeyshreenandn@gmail.com</b></p>
-      <a class="btn" href="mailto:pandeyshreenandn@gmail.com">Email Me</a>
-    </div>
-
-  </div>
-
-  <div class="footer">
-    © 2026 Shreenandan Pandey | Hosted on GitHub Pages
-  </div>
-
-</body>
-</html>
-<script src="script.js"></script>
+      <!-- Resume button -->
