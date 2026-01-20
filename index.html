@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Pandey Digital Solutions</title>
+
+  <style>
+    :root{
+      --bg:#0b0f19;
+      --card:#121a2b;
+      --muted:#9aa7c7;
+      --text:#eaf0ff;
+      --brand:#6ea8ff;
+      --brand2:#a36bff;
+      --border:rgba(255,255,255,0.10);
+    }
+    *{margin:0;padding:0;box-sizing:border-box;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;}
+    body{background: radial-gradient(1200px 600px at 20% 10%, rgba(110,168,255,.25), transparent 55%),
+                 radial-gradient(1200px 600px at 90% 20%, rgba(163,107,255,.22), transparent 55%),
+                 var(--bg);
+         color:var(--text);}
+    a{text-decoration:none;color:inherit}
+    .container{max-width:1150px;margin:auto;padding:0 18px;}
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(11,15,25,0.75);
+      backdrop-filter: blur(12px);
+      border-bottom:1px solid var(--border);
+    }
+    .nav-inner{display:flex;justify-content:space-between;align-items:center;height:70px;}
+    .brand{display:flex;gap:12px;align-items:center;}
+    .logo{
+      height:42px;width:42px;border-radius:14px;
+      border:1px solid var(--border);
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(110,168,255,.2), rgba(163,107,255,.2));
+      font-weight:800;
+    }
+    .brand h1{font-size:15px;font-weight:700;line-height:1.1}
+    .brand p{font-size:12px;color:var(--muted);margin-top:2px}
+    .nav-links{display:flex;gap:10px;align-items:center}
+    .btn{
+      padding:11px 16px;border-radius:16px;
+      border:1px solid var(--border);
+      background:transparent;
+      cursor:pointer;color:var(--text);
+      font-weight:600;font-size:13px;
+      transition:.2s;
+    }
+    .btn:hover{transform:translateY(-1px);border-color:rgba(255,255,255,0.25)}
+    .btn.primary{
+      border:none;
+      background:linear-gradient(90deg, var(--brand), var(--brand2));
+      color:#071021;
+    }
+    .hero{padding:70px 0 40px;}
+    .hero-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:24px;align-items:center}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      border:1px solid var(--border);
+      padding:8px 12px;border-radius:999px;
+      color:var(--muted);font-size:12px;
+    }
+    .hero h2{margin-top:14px;font-size:46px;line-height:1.08;letter-spacing:-0.02em;}
+    .hero h2 span{background:linear-gradient(90deg,var(--brand),var(--brand2));
+      -webkit-background-clip:text;background-clip:text;color:transparent}
+    .hero .sub{margin-top:14px;color:var(--muted);line-height:1.6;font-size:15px;max-width:650px}
+    .hero-actions{margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;}
+    .kpis{margin-top:22px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;max-width:430px}
+    .kpi{border:1px solid var(--border);border-radius:18px;padding:12px 14px;background:rgba(255,255,255,0.03)}
+    .kpi b{font-size:12px}
+    .kpi p{font-size:12px;color:var(--muted);margin-top:4px}
+
+    section{padding:60px 0;}
+    .section-title{text-align:center}
+    .section-title h3{font-size:32px;letter-spacing:-0.02em}
+    .section-title p{margin-top:10px;color:var(--muted);font-size:14px;line-height:1.6}
+
+    .card{
+      border:1px solid var(--border);
+      background:rgba(255,255,255,0.04);
+      border-radius:24px;
+      padding:18px;
+    }
+
+    .grid-4{margin-top:28px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .grid-2{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .grid-3{margin-top:28px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+
+    .service h4{font-size:16px}
+    .service p{margin-top:8px;color:var(--muted);font-size:13px;line-height:1.6}
+    .service ul{margin-top:10px;color:var(--muted);font-size:13px;line-height:1.8;padding-left:14px}
+    .service .icon{
+      height:42px;width:42px;border-radius:16px;
+      border:1px solid var(--border);
+      display:grid;place-items:center;
+      margin-bottom:12px;
+      background:linear-gradient(135deg, rgba(110,168,255,.18), rgba(163,107,255,.14));
+      font-weight:900;
+    }
+
+    .owner{
+      display:flex;gap:16px;align-items:flex-start;
+    }
+    .owner-img{
+      height:84px;width:84px;border-radius:24px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.25);
+      display:grid;place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .owner-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .owner small{color:var(--muted)}
+    .owner h4{font-size:18px}
+    .pill{
+      margin-top:10px;display:flex;flex-wrap:wrap;gap:8px
+    }
+    .pill span{
+      border:1px solid var(--border);padding:6px 10px;border-radius:999px;
+      font-size:12px;color:var(--muted);
+      background:rgba(0,0,0,0.12);
+    }
+
+    .contact-wrap{margin-top:28px;display:grid;grid-template-columns:1fr 0.9fr;gap:14px}
+    input,textarea{
+      width:100%;padding:12px 14px;border-radius:16px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,0.2);
+      color:var(--text);outline:none;
+      font-size:13px;
+    }
+    textarea{min-height:130px;resize:vertical}
+    .row{display:grid;gap:10px}
+    .footer{padding:35px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:12px}
+
+    @media(max-width:900px){
+      .hero-grid{grid-template-columns:1fr;gap:18px}
+      .grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .grid-2{grid-template-columns:1fr}
+      .grid-3{grid-template-columns:1fr}
+      .contact-wrap{grid-template-columns:1fr}
+      .hero h2{font-size:36px}
+      .nav-links{display:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <div class="brand" onclick="scrollToId('home')" style="cursor:pointer">
+          <div class="logo">P</div>
+          <div>
+            <h1>Pandey Digital Solutions</h1>
+            <p>Websites • Apps • Digital Systems</p>
+          </div>
+        </div>
+
+        <div class="nav-links">
+          <button class="btn" onclick="scrollToId('services')">Services</button>
+          <button class="btn" onclick="scrollToId('work')">Work</button>
+          <button class="btn" onclick="scrollToId('pricing')">Pricing</button>
+          <button class="btn" onclick="scrollToId('owner')">Owner</button>
+          <button class="btn primary" onclick="scrollToId('contact')">Get a Quote</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero" id="home">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="badge">✅ Delhi • Remote delivery available</div>
+          <h2>
+            Build a modern <span>website</span> or
+            <span>web app</span> for your business.
+          </h2>
+          <p class="sub">
+            Pandey Digital Solutions helps businesses & startups launch professional websites,
+            dashboards, and automation systems with clean UI, SEO foundation, and scalable code.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn primary" onclick="scrollToId('contact')">Start Your Project →</button>
+            <button class="btn" onclick="scrollToId('pricing')">View Pricing</button>
+          </div>
+
+          <div class="kpis">
+            <div class="kpi"><b>Fast delivery</b><p>2–14 days websites</p></div>
+            <div class="kpi"><b>Mobile-first UI</b><p>Perfect for phone users</p></div>
+            <div class="kpi"><b>SEO Ready</b><p>Google indexing setup</p></div>
+            <div class="kpi"><b>Secure</b><p>SSL + security checks</p></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="font-size:16px">⚡ Quick Estimate</h3>
+          <p style="color:var(--muted);font-size:13px;margin-top:8px;line-height:1.5">
+            Typical timelines:
+          </p>
+          <div style="margin-top:12px;display:grid;gap:10px">
+            <div class="card" style="border-radius:18px;background:rgba(0,0,0,0.16);padding:12px">
+              <b style="font-size:13px">Landing page:</b> <span style="color:var(--muted)">2–4 days</span>
+            </div>
+            <div class="card" style="border-radius:18px;background:rgba(0,0,0,0.16);padding:12px">
+              <b style="font-size:13px">Business website:</b> <span style="color:var(--muted)">7–14 days</span>
+            </div>
+            <div class="card" style="border-radius:18px;background:rgba(0,0,0,0.16);padding:12px">
+              <b style="font-size:13px">Web app:</b> <span style="color:var(--muted)">3–8 weeks</span>
+            </div>
+          </div>
+          <button class="btn primary" style="margin-top:14px;width:100%" onclick="scrollToId('contact')">
+            Request Callback
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h3>Services</h3>
+        <p>Everything you need to launch online — from websites to full dashboards.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card service">
+          <div class="icon">🌐</div>
+          <h4>Website Development</h4>
+          <p>Fast responsive websites: landing pages to corporate sites.</p>
+          <ul>
+            <li>Business website</li>
+            <li>Portfolio website</li>
+            <li>E-commerce</li>
+            <li>Speed optimization</li>
+          </ul>
+        </div>
+
+        <div class="card service">
+          <div class="icon">💻</div>
+          <h4>Web Applications</h4>
+          <p>Custom apps with login, dashboards, roles and APIs.</p>
+          <ul>
+            <li>Django / Node backend</li>
+            <li>REST APIs</li>
+            <li>Admin panels</li>
+            <li>Authentication</li>
+          </ul>
+        </div>
+
+        <div class="card service">
+          <div class="icon">📱</div>
+          <h4>Mobile Apps</h4>
+          <p>Android/iOS apps using modern frameworks and clean UI.</p>
+          <ul>
+            <li>Cross-platform app</li>
+            <li>Firebase / backend</li>
+            <li>Push notifications</li>
+            <li>App store support</li>
+          </ul>
+        </div>
+
+        <div class="card service">
+          <div class="icon">🛡️</div>
+          <h4>Maintenance</h4>
+          <p>Monthly support for security, backup, fixes & improvements.</p>
+          <ul>
+            <li>SSL & updates</li>
+            <li>Backups</li>
+            <li>Bug fixes</li>
+            <li>Performance monitoring</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OWNER SECTION (From your CV) -->
+  <section id="owner">
+    <div class="container">
+      <div class="section-title">
+        <h3>Owner</h3>
+        <p>Professional profile of the owner & technical expertise.</p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="owner">
+            <div class="owner-img">
+              <!-- Upload your photo as owner.jpg in same folder -->
+              <img src="owner.jpg" alt="Owner photo"
+                onerror="this.style.display='none'; this.parentElement.innerHTML='📷';" />
+            </div>
+            <div>
+              <h4>Shreenandan Pandey</h4>
+              <small>Owner • Pandey Digital Solutions</small>
+
+              <p style="margin-top:10px;color:var(--muted);font-size:13px;line-height:1.7">
+                Motivated IT professional transitioning into
+                <b style="color:var(--text)">Software Testing / Quality Assurance</b> with strong hands-on practice
+                in Manual Testing and API Testing using Postman.
+              </p>
+
+              <div class="pill">
+                <span>Manual Testing</span>
+                <span>STLC</span>
+                <span>Postman (API Testing)</span>
+                <span>JIRA</span>
+                <span>Java</span>
+                <span>C/C++</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="font-size:16px">Key Projects (Testing)</h4>
+          <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-top:10px">
+            ✅ API Testing – E-Commerce Application (Postman, REST APIs, CRUD testing, JSON validation, defect logging)<br/>
+            ✅ Manual Testing – Web-Based Application (smoke/sanity/regression, test cases, defect tracking)
+          </p>
+
+          <h4 style="font-size:16px;margin-top:16px">Education & Achievements</h4>
+          <p style="color:var(--muted);font-size:13px;line-height:1.7;margin-top:10px">
+            🎓 B.Tech (CSE) – Gurukul Kangri University (2010)<br/>
+            🏆 Prize winner in multiple programming events; qualified IIT screening exam (2005)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h3>Contact</h3>
+        <p>Send requirements — we’ll reply with a clear plan & quotation.</p>
+      </div>
+
+      <div class="contact-wrap">
+        <div class="card">
+          <h4 style="font-size:16px">📩 Message us</h4>
+
+          <div class="row" style="margin-top:14px">
+            <input id="name" placeholder="Your name" />
+            <input id="email" placeholder="Your email" />
+            <textarea id="message" placeholder="Tell us what you want to build (website/app, pages, features, budget)…"></textarea>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
+              <button class="btn primary" onclick="sendEmail()">Send Email →</button>
+              <button class="btn" onclick="copyWhatsApp()">Copy for WhatsApp</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h4 style="font-size:16px">📌 Business Details</h4>
+          <p style="margin-top:10px;color:var(--muted);font-size:13px;line-height:1.7">
+            <b style="color:var(--text)">Pandey Digital Solutions</b><br/>
+            Owner: Shreenandan Pandey<br/><br/>
+
+            <b style="color:var(--text)">Email:</b> pandeyshreenandan@gmail.com<br/>
+            <b style="color:var(--text)">Phone:</b> +91-81788 08009
+          </p>
+
+          <div class="card" style="margin-top:14px;background:rgba(0,0,0,0.18)">
+            <p style="color:var(--muted);font-size:13px;line-height:1.7">
+              ✅ Clean UI + mobile first<br/>
+              ✅ SEO included<br/>
+              ✅ Secure deployment<br/>
+              ✅ Clear timelines
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        © <span id="year"></span> Pandey Digital Solutions. All rights reserved.
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.getElementById("year").innerText = new Date().getFullYear();
+
+    function scrollToId(id){
+      document.getElementById(id).scrollIntoView({behavior:"smooth"});
+    }
+
+    function buildMessage(){
+      const name = document.getElementById("name").value || "";
+      const email = document.getElementById("email").value || "";
+      const msg = document.getElementById("message").value || "";
+      return `Project inquiry — Pandey Digital Solutions
+
+Name: ${name}
+Email: ${email}
+
+Message:
+${msg}`;
+    }
+
+    function sendEmail(){
+      const subject = encodeURIComponent("Project inquiry — Pandey Digital Solutions");
+      const body = encodeURIComponent(buildMessage());
+      window.location.href = `mailto:pandeyshreenandan@gmail.com?subject=${subject}&body=${body}`;
+    }
+
+    function copyWhatsApp(){
+      const text = buildMessage();
+      navigator.clipboard.writeText(text);
+      alert("Message copied. Paste into WhatsApp.");
+    }
+  </script>
+
+</body>
+</html>
