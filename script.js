@@ -5,3 +5,5 @@ document.getElementById("year").innerText = new Date().getFullYear();
 const options = { year: "numeric", month: "short", day: "numeric" };
 document.getElementById("todayDate").innerText =
   new Date().toLocaleDateString("en-IN", options);
+
+document.getElementById("year").innerText = new Date().getFullYear();

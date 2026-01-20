@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shreenandan Pandey | Portfolio</title>
+  <title>Shreenandan Pandey | QA Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -12,47 +12,57 @@
   <nav class="nav">
     <div class="nav-left">
       <div class="logo">SP</div>
-      <div class="name">Shreenandan Pandey</div>
+      <div class="nav-title">
+        <div class="name">Shreenandan Pandey</div>
+        <div class="role">QA / Manual Tester • API Testing</div>
+      </div>
     </div>
+
     <div class="nav-right">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
-      <a href="#contact" class="btn-small">Contact</a>
+      <a href="#contact" class="nav-btn">Contact</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm <span class="highlight">Shreenandan Pandey</span> 👋</h1>
+  <header class="hero" id="top">
+    <div class="hero-left">
+      <p class="tag">✅ Available for QA / Manual Testing roles</p>
+      <h1>
+        Hi, I'm <span class="accent">Shreenandan Pandey</span> 👋
+      </h1>
       <p class="subtitle">
-        Beginner Web Developer (HTML • CSS • JavaScript) <br />
-        Building projects and learning daily 🚀
+        IT professional transitioning into <b>Software Testing / QA</b>.
+        Strong in <b>Manual Testing</b>, <b>STLC</b>, <b>API Testing (Postman)</b> and defect tracking using <b>JIRA</b>.
       </p>
 
-      <div class="hero-buttons">
+      <div class="hero-actions">
         <a class="btn" href="#projects">View Projects</a>
-        <a class="btn-outline" href="#contact">Hire / Contact Me</a>
+        <a class="btn-outline" href="resume.pdf" download>Download Resume</a>
       </div>
 
       <div class="social">
         <a target="_blank" href="https://github.com/pandeyshreenandan">GitHub</a>
         <a target="_blank" href="https://www.linkedin.com/">LinkedIn</a>
-        <a target="_blank" href="https://wa.me/91XXXXXXXXXX">WhatsApp</a>
+        <a target="_blank" href="https://wa.me/918178808009">WhatsApp</a>
       </div>
     </div>
 
-    <div class="hero-card">
-      <p class="badge">✅ Hosted on GitHub Pages</p>
-      <h3>My Website is Live</h3>
-      <p class="small">
-        Link:
-        <a target="_blank" href="https://pandeyshreenandan.github.io/Shreenandan_Project1/">
-          Open Portfolio
-        </a>
-      </p>
-      <p class="small">Updated: <span id="todayDate"></span></p>
+    <div class="hero-right">
+      <div class="profile-card">
+        <img class="profile-pic" src="images/profile.jpg" alt="Shreenandan Pandey profile photo" />
+        <div class="profile-info">
+          <h3>Shreenandan Pandey</h3>
+          <p>QA / Manual Tester</p>
+          <div class="mini">
+            <span>Postman</span>
+            <span>JIRA</span>
+            <span>STLC</span>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -61,11 +71,191 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        Hi! My name is <b>Shreenandan Pandey</b>. I am learning Web Development.
-        I created this portfolio website using <b>Git</b>, <b>GitHub</b> and <b>GitHub Pages</b>.
+        Motivated IT professional transitioning into <b>Software Testing / Quality Assurance</b>.
+        Recently upskilled in <b>Manual Testing</b>, <b>STLC</b>, and <b>API Testing using Postman</b>.
       </p>
-      <p>
-        I want to become a skilled developer and build real-world websites and apps.
+      <p class="muted">
+        My goal is to work as an entry-level <b>QA / Manual Tester</b> and ensure high-quality software delivery.
       </p>
 
-      <!-- Resume button -->
+      <div class="quick-grid">
+        <div class="quick">
+          <div class="quick-title">Email</div>
+          <div class="quick-value">pandeyshreenandan@gmail.com</div>
+        </div>
+        <div class="quick">
+          <div class="quick-title">Phone</div>
+          <div class="quick-value">+91-81788 08009</div>
+        </div>
+        <div class="quick">
+          <div class="quick-title">Location</div>
+          <div class="quick-value">Delhi, India</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+
+    <div class="grid">
+
+      <div class="skill">
+        <h3>QA Skills (STLC)</h3>
+        <ul>
+          <li>Requirement Analysis</li>
+          <li>Test Planning</li>
+          <li>Test Case Design</li>
+          <li>Test Environment Setup</li>
+          <li>Test Execution</li>
+          <li>Defect Reporting & Tracking</li>
+          <li>Test Closure</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>Manual Testing</h3>
+        <ul>
+          <li>Functional Testing</li>
+          <li>Regression Testing</li>
+          <li>Smoke & Sanity Testing</li>
+          <li>Test Scenarios & Test Cases</li>
+          <li>Test Data Preparation</li>
+          <li>Defect Life Cycle</li>
+          <li>Severity vs Priority</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>API Testing (Postman)</h3>
+        <ul>
+          <li>REST APIs: GET / POST / PUT / DELETE</li>
+          <li>Validate JSON response</li>
+          <li>Headers, Query/Path Params</li>
+          <li>Environment & variables</li>
+          <li>Status codes + response time</li>
+          <li>Collections</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>Tools</h3>
+        <ul>
+          <li>Postman</li>
+          <li>JIRA</li>
+          <li>MS Excel (Test Cases)</li>
+          <li>MS Word (Reports)</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>Programming</h3>
+        <ul>
+          <li>C</li>
+          <li>C++</li>
+          <li>Java</li>
+        </ul>
+      </div>
+
+      <div class="skill">
+        <h3>Other</h3>
+        <ul>
+          <li>Windows OS</li>
+          <li>MS Office</li>
+          <li>Analytical thinking</li>
+          <li>Quality-focused mindset</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+
+    <div class="projects">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img class="project-img" src="images/project-api.png" alt="API Testing project image" />
+        <div class="project-body">
+          <h3>API Testing – E-Commerce Application</h3>
+          <p class="muted">
+            Manual API testing using Postman on sample e-commerce APIs. Created test cases and validated CRUD operations.
+          </p>
+
+          <ul class="bullets">
+            <li>REST API testing in Postman</li>
+            <li>GET/POST/PUT/DELETE testing</li>
+            <li>Validated status codes, headers, JSON</li>
+            <li>Logged defects with severity/priority</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>Postman</span>
+            <span>REST API</span>
+            <span>STLC</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn-small" href="#" onclick="alert('Add your Postman collection link here'); return false;">Postman Collection</a>
+            <a class="btn-small-outline" target="_blank" href="https://github.com/pandeyshreenandan/Shreenandan_Project1">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img class="project-img" src="images/project-manual.png" alt="Manual Testing project image" />
+        <div class="project-body">
+          <h3>Manual Testing – Web-Based Application</h3>
+          <p class="muted">
+            Prepared test scenarios, executed test cases, and tracked defects through defect life cycle.
+          </p>
+
+          <ul class="bullets">
+            <li>Functional + Smoke + Sanity tests</li>
+            <li>Regression test execution</li>
+            <li>Defect reporting & tracking</li>
+            <li>Test execution + defect summary report</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>Manual Testing</span>
+            <span>JIRA</span>
+            <span>Excel</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="btn-small" href="#" onclick="alert('You can add your test case sheet link here'); return false;">Test Cases</a>
+            <a class="btn-small-outline" target="_blank" href="resume.pdf">Read in Resume</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p><b>Email:</b> pandeyshreenandan@gmail.com</p>
+      <p><b>Phone:</b> +91-81788 08009</p>
+
+      <div class="contact-actions">
+        <a class="btn" href="mailto:pandeyshreenandan@gmail.com">Email Me</a>
+        <a class="btn-outline" target="_blank" href="https://wa.me/918178808009">WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    © <span id="year"></span> Shreenandan Pandey • QA Portfolio
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
